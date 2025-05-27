@@ -12,8 +12,12 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY launch rviz world
+  DIRECTORY launch rviz world script
   DESTINATION share/${PROJECT_NAME}/
 )
+
+install(PROGRAMS
+  script/omni_teleop_keyboard.py
+  DESTINATION lib/${PROJECT_NAME} )
 
 ament_package()
